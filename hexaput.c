@@ -1,26 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   hexaput.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykabili- <ykabili-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 16:56:12 by yassine           #+#    #+#             */
-/*   Updated: 2024/11/29 15:55:48 by ykabili-         ###   ########.fr       */
+/*   Created: 2024/11/30 14:41:02 by ykabili-          #+#    #+#             */
+/*   Updated: 2024/11/30 14:41:27 by ykabili-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
-int	ft_printf(const char *form, ...)
-{
-	va_list track;
-	int i;
-
-	i = 0;
-	va_start(track, form);
-	if (form[i] == '%')
-    {
-        formaspecifier();
-    }
-}

@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykabili- <ykabili-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 16:56:12 by yassine           #+#    #+#             */
-/*   Updated: 2024/11/29 15:55:48 by ykabili-         ###   ########.fr       */
+/*   Created: 2024/11/29 10:19:34 by ykabili-          #+#    #+#             */
+/*   Updated: 2024/11/29 15:23:18 by ykabili-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *form, ...)
+int	ft_putnbr(int n)
 {
-	va_list track;
-	int i;
+	long	nbr;
+	int		i;
 
-	i = 0;
-	va_start(track, form);
-	if (form[i] == '%')
-    {
-        formaspecifier();
-    }
+	i = 1;
+	nbr = n;
+	if (n < 0)
+	{
+		write (1, "-", 1);
+		nbr = -nbr;
+		i++;
+	}
+	if (nbr > 9)
+	{
+		i += ft_putnbr(nbr / 10);
+		nbr %= 10;
+	}
+	if (nbr <= 9)
+	{
+		ft_putchar(nbr + '0');
+	}
+	return (i);
 }

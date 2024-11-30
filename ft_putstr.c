@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykabili- <ykabili-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 16:56:12 by yassine           #+#    #+#             */
-/*   Updated: 2024/11/29 15:55:48 by ykabili-         ###   ########.fr       */
+/*   Created: 2024/11/29 10:19:38 by ykabili-          #+#    #+#             */
+/*   Updated: 2024/11/29 14:52:16 by ykabili-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *form, ...)
+int	ft_putstr(char *str)
 {
-	va_list track;
-	int i;
+	int	i;
 
 	i = 0;
-	va_start(track, form);
-	if (form[i] == '%')
-    {
-        formaspecifier();
-    }
+	if (!str)
+	{
+		write (1, "(null)", 6);
+		return (6);
+	}
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return (i);
 }
