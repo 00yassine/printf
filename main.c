@@ -2,5 +2,5 @@
 
 int main()
 {
-    ft_printf("%s","yavbx");
+    ft_printf("%s",NULL);
 }

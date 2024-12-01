@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ykabili- <ykabili-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yassine <yassine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:56:12 by yassine           #+#    #+#             */
-/*   Updated: 2024/12/01 12:43:26 by ykabili-         ###   ########.fr       */
+/*   Updated: 2024/12/01 14:19:12 by yassine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int formaspecifier(char c, va_list track)
 	// if (c == 'c')
 	// 	count += ft_putchar(va_arg(track, int));
 	if (c == 's')
-		count += ft_putnbr(va_arg(track, char *));
+		count += ft_putstr(va_arg(track, char *));
 	// else if (c == 'x' || c == 'X')
 	// 	count += ft_hexaput(va_arg(track, int));
 	// else if (c == 'p')

@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 OFILES = $(FILES:.c=.o)
 
-all = $(NAME)
+first : $(NAME)
 
 $(NAME): $(OFILES)
 	ar rcs $(NAME) $(OFILES)
@@ -20,7 +20,7 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean all
+re: fclean first
 
 .SECONDARY: $(OFILES)
-.PHONY: all clean fclean re
+.PHONY: first clean fclean re
