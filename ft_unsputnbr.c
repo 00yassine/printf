@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_unsputnbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yassine <yassine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 18:10:47 by yassine           #+#    #+#             */
-/*   Updated: 2024/12/01 21:39:03 by yassine          ###   ########.fr       */
+/*   Created: 2024/12/01 21:34:17 by yassine           #+#    #+#             */
+/*   Updated: 2024/12/01 21:38:30 by yassine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdio.h>
+#include "ft_printf.h"
 
-int ft_puthexa(unsigned long n);
-int ft_hexaput(unsigned int n, char c);
-int	ft_printf(const char *form, ...);
-int formaspecifier(char c, va_list track);
-int	ft_putchar(char c);
-int	ft_putnbr(int n);
-int	ft_putstr(char *str);
-int ft_putadress(unsigned long n);
-int ft_unsputnbr(unsigned int n);
-#endif
+int ft_unsputnbr(unsigned int n)
+{
+	int		i;
+
+	i = 1;
+	if (n > 9)
+	{
+		i += ft_putnbr(n / 10);
+		n %= 10;
+	}
+	if (n <= 9)
+	{
+		ft_putchar(n + '0');
+	}
+	return (i);
+}

@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 
-FILES = ft_printf.c ft_putnbr.c ft_putstr.c ft_putchar.c 
+FILES = ft_printf.c ft_putnbr.c ft_putstr.c ft_putchar.c ft_hexaput.c ft_putadress.c ft_unsputnbr.c
 
 CFLAGS = -Wall -Wextra -Werror 
 
