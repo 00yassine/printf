@@ -6,15 +6,15 @@
 /*   By: yassine <yassine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 21:34:17 by yassine           #+#    #+#             */
-/*   Updated: 2024/12/01 21:38:30 by yassine          ###   ########.fr       */
+/*   Updated: 2024/12/02 03:02:58 by yassine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_unsputnbr(unsigned int n)
+int	ft_unsputnbr(unsigned int n)
 {
-	int		i;
+	int	i;
 
 	i = 1;
 	if (n > 9)

@@ -6,15 +6,16 @@
 /*   By: yassine <yassine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:56:12 by yassine           #+#    #+#             */
-/*   Updated: 2024/12/02 01:13:58 by yassine          ###   ########.fr       */
+/*   Updated: 2024/12/02 03:06:17 by yassine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int formaspecifier(char c, va_list track)
+int	formaspecifier(char c, va_list track)
 {
-	int count;
+	int	count;
+
 	count = 0;
 	if (c == 'i' || c == 'd')
 		count += ft_putnbr(va_arg(track, int));
@@ -35,9 +36,9 @@ int formaspecifier(char c, va_list track)
 
 int	ft_printf(const char *form, ...)
 {
-	va_list track;
-	int	i;
-	int count;
+	va_list	track;
+	int		i;
+	int		count;
 
 	count = 0;
 	i = 0;
@@ -48,7 +49,7 @@ int	ft_printf(const char *form, ...)
 	{
 		if (form[i] == '%')
 		{
-			if(form[i + 1] == '\0')
+			if (form[i + 1] == '\0')
 				count = -1;
 			else
 				formaspecifier(form[i + 1], track);
@@ -56,15 +57,8 @@ int	ft_printf(const char *form, ...)
 		}
 		else
 			count += ft_putchar(form[i]);
-		i++;	
+		i++;
 	}
 	va_end(track);
 	return (count);
-}
-int main()
-{
-	char *p;
-	p = "yassine";
-	ft_printf("%s %d %u %i %p %x %X %% \n",p ,78, -58, 96, p, 496559, 496559);
-	printf("%s %d %u %i %p %x %X %%",p ,78, -58, 96, p, 496559, 496559);
 }
