@@ -6,7 +6,7 @@
 /*   By: ykabili- <ykabili-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:56:12 by yassine           #+#    #+#             */
-/*   Updated: 2024/12/03 04:20:39 by ykabili-         ###   ########.fr       */
+/*   Updated: 2024/12/03 20:56:55 by ykabili-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_printf(const char *form, ...)
 
 	count = 0;
 	i = 0;
-	if (!form || write(1, 0, 0) == -1)
+	if (!form)
 		return (-1);
 	va_start(track, form);
 	while (form[i] && count != -1)
