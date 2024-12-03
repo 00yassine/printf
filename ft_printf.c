@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yassine <yassine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ykabili- <ykabili-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:56:12 by yassine           #+#    #+#             */
-/*   Updated: 2024/12/02 03:06:17 by yassine          ###   ########.fr       */
+/*   Updated: 2024/12/03 04:20:39 by ykabili-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_printf(const char *form, ...)
 			if (form[i + 1] == '\0')
 				count = -1;
 			else
-				formaspecifier(form[i + 1], track);
+				count += formaspecifier(form[i + 1], track);
 			i++;
 		}
 		else
